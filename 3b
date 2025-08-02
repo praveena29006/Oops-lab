@@ -1,0 +1,42 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class stack:
+    def __init__(self):
+        self.top=None
+    def push(self,title):
+        new_node=Node(title)
+        new_node.next=self.top
+        self.top=new_node
+        print("pushed:",title)
+    def pop(self):
+        if self.top is None:
+            print("stck is empty")
+        else:
+            print("popped",self.top.data)
+            self.top=self.top.next
+    def display(self):
+        if self.top is None:
+            print("stack is empty")
+        else:
+            temp=self.top
+            while temp:
+                print(temp.data,end="->")
+                temp=temp.next
+            print("NULL")
+stack=stack()
+stack.push("book A")
+stack.push("book B")
+stack.display()
+stack.pop()
+stack.display()
+
+
+OUTPUT:
+pushed: book A
+pushed: book B
+book B->book A->NULL
+popped book B
+book A->NULL
+

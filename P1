@@ -1,0 +1,162 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.rear = None
+
+    # Enqueue operation
+    def enqueue(self, value):
+        newNode = Node(value)
+        if self.rear is None:  # Queue is empty
+            self.front = self.rear = newNode
+        else:
+            self.rear.next = newNode
+            self.rear = newNode
+        print(f"{value} enqueued to queue.")
+
+    # Dequeue operation
+    def dequeue(self):
+        if self.front is None:
+            print("Queue is Empty!")
+            return
+        temp = self.front
+        self.front = self.front.next
+        if self.front is None:
+            self.rear = None
+        print(f"{temp.data} dequeued from queue.")
+
+    # Display operation
+    def display(self):
+        if self.front is None:
+            print("Queue is Empty!")
+            return
+        temp = self.front
+        print("Queue Elements:")
+        while temp:
+            print(f"{temp.data} --> ", end="")
+            temp = temp.next
+        print("NULL")
+
+# ----------- Menu-driven Program -------------
+if __name__ == "__main__":
+    q = Queue()
+
+    while True:
+        print("\nMenu:")
+        print("1. Enqueue")
+        print("2. Dequeue")
+        print("3. Display")
+        print("4. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            value = input("Enter value to enqueue: ")
+            q.enqueue(value)
+        elif choice == '2':
+            q.dequeue()
+        elif choice == '3':
+            q.display()
+        elif choice == '4':
+            print("Exiting program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+Output 
+   == Queue Operations ===
+1. Enqueue
+2. Dequeue
+3. Check if Queue is Empty
+4. Get Queue Size
+5. Show Queue
+6. Exit
+Enter your choice (1-6): 1
+Enter the value to insert: 3253434
+Inserted 3253434 into queue.
+
+=== Queue Operations ===
+1. Enqueue
+2. Dequeue
+3. Check if Queue is Empty
+4. Get Queue Size
+5. Show Queue
+6. Exit
+Enter your choice (1-6): 1
+Enter the value to insert: 235435342
+Inserted 235435342 into queue.
+
+=== Queue Operations ===
+1. Enqueue
+2. Dequeue
+3. Check if Queue is Empty
+4. Get Queue Size
+5. Show Queue
+6. Exit
+Enter your choice (1-6): 1
+Enter the value to insert: 436346
+Inserted 436346 into queue.
+
+=== Queue Operations ===
+1. Enqueue
+2. Dequeue
+3. Check if Queue is Empty
+4. Get Queue Size
+5. Show Queue
+6. Exit
+Enter your choice (1-6): 1
+Enter the value to insert: 34635
+Inserted 34635 into queue.
+
+=== Queue Operations ===
+1. Enqueue
+2. Dequeue
+3. Check if Queue is Empty
+4. Get Queue Size
+5. Show Queue
+6. Exit
+Enter your choice (1-6): 2
+Deleted element: 3253434
+
+=== Queue Operations ===
+1. Enqueue
+2. Dequeue
+3. Check if Queue is Empty
+4. Get Queue Size
+5. Show Queue
+6. Exit
+Enter your choice (1-6): 3
+Queue is NOT Empty
+
+=== Queue Operations ===
+1. Enqueue
+2. Dequeue
+3. Check if Queue is Empty
+4. Get Queue Size
+5. Show Queue
+6. Exit
+Enter your choice (1-6): 4
+Queue size = 3
+
+=== Queue Operations ===
+1. Enqueue
+2. Dequeue
+3. Check if Queue is Empty
+4. Get Queue Size
+5. Show Queue
+6. Exit
+Enter your choice (1-6): 5
+Queue elements are: 235435342 436346 34635
+
+=== Queue Operations ===
+1. Enqueue
+2. Dequeue
+3. Check if Queue is Empty
+4. Get Queue Size
+5. Show Queue
+6. Exit
+Enter your choice (1-6): 6
+Exiting program.

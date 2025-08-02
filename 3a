@@ -1,0 +1,100 @@
+stack=[]
+MAX=5
+top=-1
+def push(book):
+    global top
+    if top==MAX-1:
+        print("stack is full cannot add more books.") 
+    else:
+        top+=1
+        stack.append(book)
+        print ("book added:",book)
+def pop():
+    global top
+    if top==-1:
+        print("stack is empty .cannot remove book")
+    else:
+        removed_book=stack[top]
+        top=-1
+        stack.pop()
+        print("book removed", removed_book)
+def peek():
+    if top==-1:
+        print("top book is",stack[top])
+    else:
+        print("stack is empty")
+        
+while True:
+    print("\n 1.push book")
+    print("\n 2.pop book")
+    print("\n 3. peek the top book")
+    print("\n 4. exit")
+    choice=input("enter your choice:")
+    if choice=='1':
+        title=input("enter the book name :")
+        push(title)
+    elif choice=='2':
+        pop()
+    elif choice=='3':
+        peek()
+    elif choice=='4':
+        print("exiting....")
+        break
+    else:
+        print("invalid choice. try again")
+
+OUTPUT:
+1.push book
+2.pop book
+3. peek the top book
+4. exit
+enter your choice:1
+enter the book name :asd
+book added: asd
+
+ 1.push book
+ 2.pop book
+ 3. peek the top book
+ 4. exit
+enter your choice:1
+enter the book name :dfg
+book added: dfg
+
+ 1.push book
+ 2.pop book
+ 3. peek the top book
+ 4. exit
+enter your choice:1
+enter the book name :ghj
+book added: ghj
+
+ 1.push book
+ 2.pop book
+ 3. peek the top book
+ 4. exit
+enter your choice:1
+enter the book name :jkl
+book added: jkl
+
+ 1.push book
+ 2.pop book
+ 3. peek the top book
+
+ 4. exit
+enter your choice:2
+book removed jkl
+
+ 1.push book
+ 2.pop book
+ 3. peek the top book
+ 4. exit
+enter your choice:3
+top book is ghj
+
+ 1.push book
+ 2.pop book
+ 3. peek the top book
+ 4. exit
+enter your choice:4
+exiting....
+
